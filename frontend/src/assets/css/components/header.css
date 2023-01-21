@@ -1,0 +1,9 @@
+.header {
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  border-bottom: 2px solid #777797;
+
+  position: relative;
+}

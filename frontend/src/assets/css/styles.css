@@ -1,0 +1,101 @@
+@import url("components/header.css");
+@import url("components/footer.css");
+@import url("components/btn.css");
+@import url("components/controls.css");
+@import url("components/other.css");
+@import url("components/side-bar.css");
+@import url("components/bluetooth.css");
+@import url("components/pre-loader.css");
+@import url("components/settings.css");
+@import url("components/checkbox.css");
+@import url("components/convert-file.css");
+
+* {
+  user-select: none;
+}
+
+img {
+  pointer-events: none;
+}
+
+html {
+  background-color: #2f2f3bc7;
+  text-align: center;
+  color: white;
+}
+
+body {
+  margin: 0;
+  color: white;
+  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""),
+    url("assets/fonts/nunito-v16-latin-regular.woff2") format("woff2");
+}
+
+#app {
+  height: 100vh;
+  text-align: center;
+}
+
+#App {
+  height: 100vh;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  height: 15px;
+}
+
+.test-h {
+  font-weight: normal;
+}
+
+.back {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center; */
+  align-items: center;
+  /* padding: 15px; */
+  /* background-color: rebeccapurple; */
+  /* margin: 15px 0; */
+}
+
+.back-title {
+  color: #ebebeb;
+  margin: 0;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.back-icon {
+  height: 15px;
+}
+
+
+.back-btn {
+  background: none;
+  border: none;
+  padding: 15px 15px;
+}
+
+.back-btn:hover {
+  background-color: #77779769;
+  cursor: pointer;
+}
