@@ -1,4 +1,5 @@
 ![miMi logo](./.github/miMi-logo.png)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FZubogain%2FmiMi-Player.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FZubogain%2FmiMi-Player?ref=badge_shield)
 
 ## Overview
 
@@ -31,3 +32,5 @@ The source code of this software is provided for informational purposes only, wi
 Unauthorised using of this software is strictly forbidden.
 
 Written by: <zubogain@gmail.com>, 20.01.2023
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FZubogain%2FmiMi-Player.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FZubogain%2FmiMi-Player?ref=badge_large)
