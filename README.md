@@ -21,8 +21,9 @@ miMi Player is only available for Windows 10 or higher.
 
 ## Technologies
 
-miMi Player is built using [Wails](https://wails.app/) and uses [JavaScript](https://wikipedia.org/wiki/JavaScript) on the frontend and Go[Go](https://go.dev/) on the backend.
+miMi Player is built using [Wails](https://wails.app/) and uses [JavaScript](https://wikipedia.org/wiki/JavaScript) on the frontend and [Go](https://go.dev/) on the backend.
 
+## FOSSA Status
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FZubogain%2FmiMi-Player.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FZubogain%2FmiMi-Player?ref=badge_large)
 
 ## Copyright (proprietary license)
