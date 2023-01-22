@@ -28,7 +28,7 @@ const initialState: IBluetoothState = {
     deviceList: []
 };
 
-export default function bluetoothReducer(state = initialState, action: PayloadAction<any>) {
+const bluetoothReducer = (state = initialState, action: PayloadAction<any>) => {
     switch (action.type) {
         case BLUETOOTH_SET_DEVICE:
         case BLUETOOTH_CLEAR_DEVICE:
@@ -40,3 +40,5 @@ export default function bluetoothReducer(state = initialState, action: PayloadAc
             return state
     }
 }
+
+export default bluetoothReducer;

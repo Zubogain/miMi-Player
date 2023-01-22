@@ -12,7 +12,7 @@ import { preloaderSetIsActive } from "../actions/preloader";
 import { IBluetoothDeviceList } from "../reducers/bluetooth";
 import BackComponent from "./back";
 
-function BluetoothComponentDevicesList() {
+const BluetoothComponentDevicesList = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
@@ -33,13 +33,13 @@ function BluetoothComponentDevicesList() {
         isConnected && navigate("/");
     }, [isConnected]);
 
-    function getDeviceList() {
+    const getDeviceList = () => {
         GetDeviceList().then(deviceList => {
             setDeviceList(deviceList);
         })
     }
 
-    function connectToDevice(deviceId: string) {
+    const connectToDevice = (deviceId: string) => {
         dispatch(preloaderSetIsActive(true));
         ConnectToDevice(deviceId).then(res => {
             dispatch(preloaderSetIsActive(false));
@@ -47,7 +47,7 @@ function BluetoothComponentDevicesList() {
         })
     }
 
-    function getConnectedDevice() {
+    const getConnectedDevice = () => {
         GetConnectedDevice().then(deviceObj => {
             dispatch(bluetoothSetDevice(deviceObj));
             setIsConnected(true);

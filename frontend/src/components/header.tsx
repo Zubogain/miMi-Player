@@ -18,7 +18,7 @@ import windowRollUp from "../assets/images/window-roll-up.svg";
 
 import { useLocation } from "react-router-dom";
 
-function HeaderComponentNavBar({ leftSideBarActive }: { leftSideBarActive: boolean }) {
+const HeaderComponentNavBar = ({ leftSideBarActive }: { leftSideBarActive: boolean }) => {
     const dispatch = useDispatch();
 
     return (
@@ -44,7 +44,7 @@ function HeaderComponentNavBar({ leftSideBarActive }: { leftSideBarActive: boole
 }
 
 
-function HeaderComponentWindowDraggable({ headerTitle, icon }: { headerTitle: string, icon: string | undefined }) {
+const HeaderComponentWindowDraggable = ({ headerTitle, icon }: { headerTitle: string, icon: string | undefined }) => {
     return (
         <div className="draggable">
             <div className="bar-container">
@@ -57,7 +57,7 @@ function HeaderComponentWindowDraggable({ headerTitle, icon }: { headerTitle: st
     )
 }
 
-function HeaderComponentWindowControls() {
+const HeaderComponentWindowControls = () => {
     return (
         <React.Fragment>
             <button
@@ -73,7 +73,7 @@ function HeaderComponentWindowControls() {
     )
 }
 
-function HeaderComponent() {
+const HeaderComponent = () => {
     const { header, track, menu, bluetooth } = useSelector((state: IRootState) => state);
 
     const location = useLocation();
@@ -95,7 +95,7 @@ function HeaderComponent() {
         }
     }, [track.path])
 
-    function currentLocationSetup(pathname: string) {
+    const currentLocationSetup = (pathname: string) => {
         switch (pathname) {
             case "/bluetooth":
                 setHeaderTitle(header.title);

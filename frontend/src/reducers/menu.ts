@@ -8,7 +8,7 @@ const initialState: IMenuState = {
     leftSideBarActive: false,
 };
 
-export default function menuReducer(state = initialState, action: PayloadAction<any>) {
+const menuReducer = (state = initialState, action: PayloadAction<any>) => {
     switch (action.type) {
         case SET_LEFT_SIDE_BAR_ACTIVE:
             return { ...state, leftSideBarActive: action.payload };
@@ -16,3 +16,5 @@ export default function menuReducer(state = initialState, action: PayloadAction<
             return state
     }
 }
+
+export default menuReducer;

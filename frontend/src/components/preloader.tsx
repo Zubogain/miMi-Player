@@ -10,7 +10,7 @@ const PRELOADER_CONTAINER_ACTIVE_CLASS_NAME = "preloader__container draggable";
 
 
 
-function PreLoaderComponent() {
+const PreLoaderComponent = () => {
     const { preloader } = useSelector((state: IRootState) => ({ preloader: state.preloader }));
     const [preloaderClassName, setPreloaderClassName] = useState(PRELOADER_CONTAINER_CLASS_NAME);
 

@@ -3,7 +3,7 @@ import { WindowSetSize } from "../../wailsjs/runtime/runtime";
 
 import Bluetooth from "../components/bluetooth";
 
-function BluetoothContainer() {
+const BluetoothContainer = () => {
     useEffect(() => {
         WindowSetSize(480, 260);
     }, []);
