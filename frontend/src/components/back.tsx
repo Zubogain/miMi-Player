@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
-function BackComponent({ to }) {
+const BackComponent = ({ to }: { to: string }) => {
     const navigate = useNavigate();
 
     const back = () => {

@@ -5,7 +5,7 @@
 @import url("components/other.css");
 @import url("components/side-bar.css");
 @import url("components/bluetooth.css");
-@import url("components/pre-loader.css");
+@import url("components/preloader.css");
 @import url("components/settings.css");
 @import url("components/checkbox.css");
 @import url("components/convert-file.css");
@@ -98,4 +98,19 @@ body {
 .back-btn:hover {
   background-color: #77779769;
   cursor: pointer;
+}
+
+.warning {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.warning__text {
+  font-weight: normal;
+  font-size: 16px;
 }

@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
+import { WindowSetSize } from "../../wailsjs/runtime/runtime";
+
 import Bluetooth from "../components/bluetooth";
 
-function BluetoothContainer() {
+const BluetoothContainer = () => {
     useEffect(() => {
-        window.runtime.WindowSetSize(480, 260);
+        WindowSetSize(480, 260);
     }, []);
 
     return (

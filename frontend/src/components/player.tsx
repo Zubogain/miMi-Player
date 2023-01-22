@@ -12,8 +12,9 @@ import InputRangeComponent from "./input";
 import { useDispatch, useSelector } from "react-redux";
 import { asyncTrackSetVolume, asyncTrackToggle, asyncTrackVolumeMutedToggle } from "../actions/track";
 import { msToPrecent } from "../utils/utils";
+import { IRootState, AppDispatch } from "../store";
 
-function PlayerComponentSeeker({ trackPrecent, deviceIsConnected }) {
+const PlayerComponentSeeker = ({ trackPrecent, deviceIsConnected }: { trackPrecent: number, deviceIsConnected: boolean }) => {
     return (
         <div className={deviceIsConnected ? "controls__seek-container relative disabled" : "controls__seek-container relative"}>
             <InputRangeComponent
@@ -28,14 +29,15 @@ function PlayerComponentSeeker({ trackPrecent, deviceIsConnected }) {
     )
 }
 
-function PlayerComponentControls({ isPlay, duration, position, volumeMuted, volume }) {
-    const dispatch = useDispatch();
+const PlayerComponentControls = ({ isPlay, duration, position, volumeMuted, volume }: { isPlay: boolean, duration: number, position: number, volumeMuted: boolean, volume: number }) => {
+    const dispatch: AppDispatch = useDispatch();
 
-    function toggleTrackVolumeMuted() {
+    const toggleTrackVolumeMuted = () => {
         dispatch(asyncTrackVolumeMutedToggle(!volumeMuted));
     }
 
-    function asyncChangeVolume(event) {
+    const asyncChangeVolume = (event: React.ChangeEvent<HTMLInputElement>) => {
+
         dispatch(asyncTrackSetVolume(event.target.valueAsNumber));
     }
 
@@ -68,7 +70,6 @@ function PlayerComponentControls({ isPlay, duration, position, volumeMuted, volu
                 <InputRangeComponent
                     hidden={volumeMuted}
                     className="volume-range"
-                    type="range"
                     min={-8}
                     max={0}
                     step={0.02}
@@ -81,7 +82,7 @@ function PlayerComponentControls({ isPlay, duration, position, volumeMuted, volu
 }
 
 
-function PlayerComponentBluetoothControls() {
+const PlayerComponentBluetoothControls = () => {
     return (
         <div className="footer relative">
             <div className="controls">
@@ -108,7 +109,6 @@ function PlayerComponentBluetoothControls() {
                 </div>
                 <InputRangeComponent
                     className="volume-range"
-                    type="range"
                     min={-8}
                     max={0}
                     step={0.02}
@@ -119,8 +119,9 @@ function PlayerComponentBluetoothControls() {
     )
 }
 
-function PlayerComponent() {
-    const { bluetooth, track } = useSelector(({ bluetooth: { device }, track }) => ({ bluetooth: { device }, track }));
+const PlayerComponent = () => {
+    // const { bluetooth, track } = useSelector(({ bluetooth: { device }, track }) => ({ bluetooth: { device }, track }));
+    const { bluetooth, track } = useSelector((state: IRootState) => ({ bluetooth: state.bluetooth, track: state.track }));
 
     const [trackPrecent, setTrackPrecent] = useState(0);
 
@@ -138,7 +139,7 @@ function PlayerComponent() {
 
             {bluetooth.device.isConnected
                 ?
-                <PlayerComponentBluetoothControls bluetooth={bluetooth} />
+                <PlayerComponentBluetoothControls />
                 :
                 <PlayerComponentControls isPlay={track.isPlay} duration={track.duration} position={track.position} volumeMuted={track.volumeMuted} volume={track.volume} />
             }

@@ -1,3 +1,4 @@
+import { PayloadAction } from '@reduxjs/toolkit';
 import {
     BLUETOOTH_SET_DEVICE,
     BLUETOOTH_CLEAR_DEVICE,
@@ -5,14 +6,29 @@ import {
     BLUETOOTH_CLEAR_DEVICE_LIST
 } from "../actions/bluetooth"
 
-const initialState = {
+export interface IBluetoothDevice {
+    Id: string,
+    Name: string,
+    isConnected: boolean
+}
+
+export interface IBluetoothDeviceList extends Array<IBluetoothDevice> { }
+
+interface IBluetoothState {
+    device: IBluetoothDevice
+    deviceList: IBluetoothDeviceList
+}
+
+const initialState: IBluetoothState = {
     device: {
+        Id: "",
+        Name: "",
         isConnected: false,
     },
     deviceList: []
 };
 
-export default function counter(state = initialState, action) {
+const bluetoothReducer = (state = initialState, action: PayloadAction<any>) => {
     switch (action.type) {
         case BLUETOOTH_SET_DEVICE:
         case BLUETOOTH_CLEAR_DEVICE:
@@ -24,3 +40,5 @@ export default function counter(state = initialState, action) {
             return state
     }
 }
+
+export default bluetoothReducer;
