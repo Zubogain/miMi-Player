@@ -99,3 +99,18 @@ body {
   background-color: #77779769;
   cursor: pointer;
 }
+
+.warning {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.warning__text {
+  font-weight: normal;
+  font-size: 16px;
+}

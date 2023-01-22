@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
+import { BrowserOpenURL } from "../../wailsjs/runtime/runtime";
 import {
     GetDeviceList,
     ConnectToDevice,
@@ -18,12 +19,16 @@ const BluetoothComponentDevicesList = () => {
 
     const [isConnected, setIsConnected] = useState(false);
     const [deviceList, setDeviceList] = useState<IBluetoothDeviceList>([]);
+    const [noDevicesFound, setNoDevicesFound] = useState<boolean>(false);
 
-    const back = () => {
-        navigate(-1);
-    }
+
+    // useEffect(() => {
+    //     console.log("ASDASDASDDASSDA:", deviceList.length != 0)
+    //     deviceList.length ? setNoDevicesFound(false) : setNoDevicesFound(true);
+    // }, []);
 
     useEffect(() => {
+        console.log(deviceList.length)
         if (!deviceList.length) {
             getDeviceList();
         }
@@ -35,7 +40,14 @@ const BluetoothComponentDevicesList = () => {
 
     const getDeviceList = () => {
         GetDeviceList().then(deviceList => {
-            setDeviceList(deviceList);
+            console.log("GetDeviceList:", deviceList)
+
+            if (deviceList == null) {
+                setNoDevicesFound(true);
+            } else {
+                setDeviceList(deviceList);
+                setNoDevicesFound(false);
+            }
         })
     }
 
@@ -55,21 +67,32 @@ const BluetoothComponentDevicesList = () => {
     }
     return (
         <React.Fragment>
-            <div className="bt-devices-container">
-                <ul className="bt-devices">
-                    {deviceList.map(({ Id, Name }, i) =>
-                        <li
-                            key={Id}
-                            className="bt-devices-item btn"
-                            onClick={connectToDevice.bind(null, Id)}>
-                            {Name}
-                        </li>
-                    )}
-                </ul>
-            </div>
+            {noDevicesFound ?
+                <div className="warning">
+                    <h3 className="warning__text">No devices found or bluetooth module not enabled</h3>
+                </div>
+                :
+                <div className="bt-devices-container">
+                    <ul className="bt-devices">
+                        {deviceList.map(({ Id, Name }, i) =>
+                            <li
+                                key={Id}
+                                className="bt-devices-item btn"
+                                onClick={connectToDevice.bind(null, Id)}>
+                                {Name}
+                            </li>
+                        )}
+                    </ul>
+                </div>
 
-            <div className="btn__container mb-15">
+            }
+
+            <div className="btn__container btn__container--horizontal mb-15">
                 <BackComponent to="/" />
+                <button className="btn btn__normal" onClick={() => {
+                    BrowserOpenURL("ms-settings:bluetooth")
+                }}>Bluetooth Settings</button>
+                <button className="btn btn__normal" onClick={getDeviceList}>Update</button>
             </div>
         </React.Fragment>
     );

@@ -6,13 +6,13 @@ import LeftSideBarComponent from "./components/left-side-bar";
 import PlayerContainer from "./containers/Player";
 import BluetoothContainer from "./containers/Bluetooth";
 import SettingsContainer from "./containers/Settings";
-import PreLoaderComponent from "./components/preloader";
+import PreloaderComponent from "./components/preloader";
 
 const App = () => {
 
   return (
     <div id="App">
-      <PreLoaderComponent />
+      <PreloaderComponent />
       <HeaderComponent />
       <Routes>
         <Route index element={<PlayerContainer />} />
