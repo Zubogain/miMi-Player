@@ -6,9 +6,9 @@ import LeftSideBarComponent from "./components/left-side-bar";
 import PlayerContainer from "./containers/Player";
 import BluetoothContainer from "./containers/Bluetooth";
 import SettingsContainer from "./containers/Settings";
-import PreLoaderComponent from "./components/pre-loader";
+import PreLoaderComponent from "./components/preloader";
 
-function App() {
+const App = () => {
 
   return (
     <div id="App">

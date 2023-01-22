@@ -4,7 +4,7 @@ import { EventsOn } from "../wailsjs/runtime/runtime";
 import { trackSetDuration, trackSetDurationMs, trackSetPosition, trackSetPositionMs } from "./actions/track";
 import { msToMinutesAndSeconds } from "./utils/utils";
 
-function eventPlayerTrackPosition({ dispatch }: { dispatch: Dispatch }) {
+const eventPlayerTrackPosition = ({ dispatch }: { dispatch: Dispatch }) => {
     EventsOn("player:track:position", (ms: number) => {
         const minutesAndSecods = msToMinutesAndSeconds(ms);
 
@@ -13,7 +13,7 @@ function eventPlayerTrackPosition({ dispatch }: { dispatch: Dispatch }) {
     });
 };
 
-function eventPlayerTrackDuration({ dispatch }: { dispatch: Dispatch }) {
+const eventPlayerTrackDuration = ({ dispatch }: { dispatch: Dispatch }) => {
     EventsOn("player:track:duration", (ms: number) => {
         const minutesAndSecods = msToMinutesAndSeconds(ms);
 
@@ -25,7 +25,7 @@ function eventPlayerTrackDuration({ dispatch }: { dispatch: Dispatch }) {
     });
 }
 
-function init(store: ToolkitStore) {
+const init = (store: ToolkitStore) => {
     eventPlayerTrackPosition(store);
     eventPlayerTrackDuration(store);
 }

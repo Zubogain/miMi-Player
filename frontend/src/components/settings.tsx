@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import BackComponent from "./back";
 
-function SettingsComponent() {
+const SettingsComponent = () => {
     const navigate = useNavigate();
 
     const back = () => {

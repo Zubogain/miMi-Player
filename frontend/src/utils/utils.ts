@@ -1,13 +1,13 @@
-export function msToMinutesAndSeconds(ms: number): string {
+export const msToMinutesAndSeconds = (ms: number): string => {
     var minutes = Math.floor(ms / 60000);
     var seconds = ((ms % 60000) / 1000).toFixed(0);
     return minutes + ":" + (parseInt(seconds) < 10 ? "0" : "") + seconds;
-}
+};
 
-export function msToPrecent(ms1: number, ms2: number): number {
+export const msToPrecent = (ms1: number, ms2: number): number => {
     return ms1 == ms2 ? 0 : (ms1 / ms2) * 100;
-}
+};
 
-export function getFileName(filePath: string): string {
+export const getFileName = (filePath: string): string => {
     return filePath.replace(/^.*[\\\/\\]/, "");
-}
+};

@@ -14,7 +14,7 @@ import { asyncTrackSetVolume, asyncTrackToggle, asyncTrackVolumeMutedToggle } fr
 import { msToPrecent } from "../utils/utils";
 import { IRootState, AppDispatch } from "../store";
 
-function PlayerComponentSeeker({ trackPrecent, deviceIsConnected }: { trackPrecent: number, deviceIsConnected: boolean }) {
+const PlayerComponentSeeker = ({ trackPrecent, deviceIsConnected }: { trackPrecent: number, deviceIsConnected: boolean }) => {
     return (
         <div className={deviceIsConnected ? "controls__seek-container relative disabled" : "controls__seek-container relative"}>
             <InputRangeComponent
@@ -29,14 +29,14 @@ function PlayerComponentSeeker({ trackPrecent, deviceIsConnected }: { trackPrece
     )
 }
 
-function PlayerComponentControls({ isPlay, duration, position, volumeMuted, volume }: { isPlay: boolean, duration: number, position: number, volumeMuted: boolean, volume: number }) {
+const PlayerComponentControls = ({ isPlay, duration, position, volumeMuted, volume }: { isPlay: boolean, duration: number, position: number, volumeMuted: boolean, volume: number }) => {
     const dispatch: AppDispatch = useDispatch();
 
-    function toggleTrackVolumeMuted() {
+    const toggleTrackVolumeMuted = () => {
         dispatch(asyncTrackVolumeMutedToggle(!volumeMuted));
     }
 
-    function asyncChangeVolume(event: React.ChangeEvent<HTMLInputElement>) {
+    const asyncChangeVolume = (event: React.ChangeEvent<HTMLInputElement>) => {
 
         dispatch(asyncTrackSetVolume(event.target.valueAsNumber));
     }
@@ -82,7 +82,7 @@ function PlayerComponentControls({ isPlay, duration, position, volumeMuted, volu
 }
 
 
-function PlayerComponentBluetoothControls() {
+const PlayerComponentBluetoothControls = () => {
     return (
         <div className="footer relative">
             <div className="controls">
@@ -119,7 +119,7 @@ function PlayerComponentBluetoothControls() {
     )
 }
 
-function PlayerComponent() {
+const PlayerComponent = () => {
     // const { bluetooth, track } = useSelector(({ bluetooth: { device }, track }) => ({ bluetooth: { device }, track }));
     const { bluetooth, track } = useSelector((state: IRootState) => ({ bluetooth: state.bluetooth, track: state.track }));
 

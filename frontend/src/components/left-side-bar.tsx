@@ -19,7 +19,7 @@ import { IRootState, AppDispatch } from "../store";
 const SIDE_BAR_CLASS_NAME = "side-bar side-bar__left z-index-4";
 const SIDE_BAR_ACTIVE_CLASS_NAME = "side-bar side-bar__left z-index-4 side-bar__hide";
 
-function LeftSideBarComponent() {
+const LeftSideBarComponent = () => {
     const dispatch: AppDispatch = useDispatch();
     const { menu: { leftSideBarActive } } = useSelector((state: IRootState) => state);
     const [sideBarClassNames, setSideBarClassNames] = useState(SIDE_BAR_CLASS_NAME);
@@ -34,12 +34,12 @@ function LeftSideBarComponent() {
 
     }, [leftSideBarActive])
 
-    function closeLeftSideMenu() {
+    const closeLeftSideMenu = () => {
         leftSideBarActive && dispatch(setMenuLeftSideBarActive(false));
     }
 
 
-    function openFile() {
+    const openFile = () => {
         dispatch(asyncTrackOpenFile());
     }
 

@@ -8,7 +8,7 @@ const initialState: IHeaderState = {
     title: "Select Device"
 };
 
-export default function headerReducer(state = initialState, action: PayloadAction<any>) {
+const headerReducer = (state = initialState, action: PayloadAction<any>) => {
     switch (action.type) {
         case HEADER_SET_TITLE:
             return { ...state, title: action.payload };
@@ -16,3 +16,8 @@ export default function headerReducer(state = initialState, action: PayloadActio
             return state
     }
 }
+
+
+
+
+export default headerReducer;
