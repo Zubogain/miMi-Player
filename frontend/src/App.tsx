@@ -8,7 +8,7 @@ import BluetoothContainer from "./containers/Bluetooth";
 import SettingsContainer from "./containers/Settings";
 import PreloaderComponent from "./components/preloader";
 
-function App() {
+const App = () => {
 
   return (
     <div id="App">

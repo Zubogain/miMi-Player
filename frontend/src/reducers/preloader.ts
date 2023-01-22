@@ -8,7 +8,7 @@ const initialState: IPreloaderState = {
     isActive: false
 };
 
-export default function preloaderReducer(state = initialState, action: PayloadAction<any>) {
+const preloaderReducer = (state = initialState, action: PayloadAction<any>) => {
     switch (action.type) {
         case PRELOADER_SET_IS_ACTIVE:
             return { ...state, isActive: action.payload };
@@ -16,3 +16,5 @@ export default function preloaderReducer(state = initialState, action: PayloadAc
             return state
     }
 }
+
+export default preloaderReducer;

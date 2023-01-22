@@ -29,7 +29,7 @@ const initialState: ITrackState = {
     volumeMuted: false,
 };
 
-export default function trackReducer(state = initialState, action: PayloadAction<any>) {
+const trackReducer = (state = initialState, action: PayloadAction<any>) => {
     switch (action.type) {
         case TRACK_SET_PLAY:
         case TRACK_SET_PAUSE:
@@ -55,3 +55,5 @@ export default function trackReducer(state = initialState, action: PayloadAction
             return state
     }
 }
+
+export default trackReducer;
