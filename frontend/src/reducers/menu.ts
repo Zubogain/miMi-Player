@@ -1,10 +1,14 @@
+import { PayloadAction } from '@reduxjs/toolkit';
 import { SET_LEFT_SIDE_BAR_ACTIVE } from "../actions/menu"
 
-const initialState = {
+interface IMenuState {
+    leftSideBarActive: boolean
+}
+const initialState: IMenuState = {
     leftSideBarActive: false,
 };
 
-export default function counter(state = initialState, action) {
+export default function menuReducer(state = initialState, action: PayloadAction<any>) {
     switch (action.type) {
         case SET_LEFT_SIDE_BAR_ACTIVE:
             return { ...state, leftSideBarActive: action.payload };

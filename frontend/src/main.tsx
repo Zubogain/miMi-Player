@@ -7,9 +7,11 @@ import "./assets/css/styles.css";
 import App from "./App";
 import init from "./wailsbridge";
 
-const container = document.getElementById("root");
+const container = document.getElementById("root") as HTMLElement;
 
 const root = createRoot(container);
+
+// store.getState
 
 init(store);
 

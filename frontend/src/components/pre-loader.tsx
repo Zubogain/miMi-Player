@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 
 import logo from "../assets/images/universal-logo.png";
+import { RootState, IRootState } from "../store";
 
 const PRELOADER_CONTAINER_CLASS_NAME = "preloader__container draggable d-none";
 const PRELOADER_CONTAINER_ACTIVE_CLASS_NAME = "preloader__container draggable";
@@ -10,7 +11,7 @@ const PRELOADER_CONTAINER_ACTIVE_CLASS_NAME = "preloader__container draggable";
 
 
 function PreLoaderComponent() {
-    const { preloader } = useSelector(({ preloader }) => ({ preloader }));
+    const { preloader } = useSelector((state: IRootState) => ({ preloader: state.preloader }));
     const [preloaderClassName, setPreloaderClassName] = useState(PRELOADER_CONTAINER_CLASS_NAME);
 
     useEffect(() => {

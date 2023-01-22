@@ -8,6 +8,8 @@ import {
 } from "../../wailsjs/go/bluetooth/Bluetooth";
 import { bluetoothSetDevice } from "../actions/bluetooth";
 import { preloaderSetIsActive } from "../actions/preloader";
+
+import { IBluetoothDeviceList } from "../reducers/bluetooth";
 import BackComponent from "./back";
 
 function BluetoothComponentDevicesList() {
@@ -15,7 +17,7 @@ function BluetoothComponentDevicesList() {
     const dispatch = useDispatch();
 
     const [isConnected, setIsConnected] = useState(false);
-    const [deviceList, setDeviceList] = useState([]);
+    const [deviceList, setDeviceList] = useState<IBluetoothDeviceList>([]);
 
     const back = () => {
         navigate(-1);
@@ -37,7 +39,7 @@ function BluetoothComponentDevicesList() {
         })
     }
 
-    function connectToDevice(deviceId) {
+    function connectToDevice(deviceId: string) {
         dispatch(preloaderSetIsActive(true));
         ConnectToDevice(deviceId).then(res => {
             dispatch(preloaderSetIsActive(false));

@@ -1,10 +1,14 @@
+import { PayloadAction } from '@reduxjs/toolkit';
 import { PRELOADER_SET_IS_ACTIVE } from "../actions/preloader"
 
-const initialState = {
+interface IPreloaderState {
+    isActive: boolean
+}
+const initialState: IPreloaderState = {
     isActive: false
 };
 
-export default function counter(state = initialState, action) {
+export default function preloaderReducer(state = initialState, action: PayloadAction<any>) {
     switch (action.type) {
         case PRELOADER_SET_IS_ACTIVE:
             return { ...state, isActive: action.payload };

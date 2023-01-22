@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 
 import { useDispatch, useSelector } from 'react-redux';
 
+import { BrowserOpenURL, WindowMinimise, Quit } from "../../wailsjs/runtime/runtime";
+
+import { IRootState } from "../store"
+
 import { setMenuLeftSideBarActive } from "../actions/menu";
 
 import logo from "../assets/images/universal-logo.png";
@@ -14,7 +18,7 @@ import windowRollUp from "../assets/images/window-roll-up.svg";
 
 import { useLocation } from "react-router-dom";
 
-function HeaderComponentNavBar({ leftSideBarActive }) {
+function HeaderComponentNavBar({ leftSideBarActive }: { leftSideBarActive: boolean }) {
     const dispatch = useDispatch();
 
     return (
@@ -30,7 +34,7 @@ function HeaderComponentNavBar({ leftSideBarActive }) {
             <button
                 className="btn logo z-index-1"
                 onClick={() => {
-                    window.runtime.BrowserOpenURL("https://github.com/Zubogain");
+                    BrowserOpenURL("https://github.com/Zubogain");
                 }}
             >
                 <img src={logo} style={{ height: "18px" }} />
@@ -40,7 +44,7 @@ function HeaderComponentNavBar({ leftSideBarActive }) {
 }
 
 
-function HeaderComponentWindowDraggable({ headerTitle, icon }) {
+function HeaderComponentWindowDraggable({ headerTitle, icon }: { headerTitle: string, icon: string | undefined }) {
     return (
         <div className="draggable">
             <div className="bar-container">
@@ -58,11 +62,11 @@ function HeaderComponentWindowControls() {
         <React.Fragment>
             <button
                 className="btn btn-roll-up z-index-1"
-                onClick={window.runtime.WindowMinimise}
+                onClick={WindowMinimise}
             >
                 <img src={windowRollUp} />
             </button>
-            <button className="btn btn-exit z-index-1" onClick={window.runtime.Quit}>
+            <button className="btn btn-exit z-index-1" onClick={Quit}>
                 <img src={windowExit} />
             </button>
         </React.Fragment>
@@ -70,10 +74,10 @@ function HeaderComponentWindowControls() {
 }
 
 function HeaderComponent() {
-    const { header, track, menu, bluetooth } = useSelector(({ header: { title }, track, menu: { leftSideBarActive }, bluetooth: { device } }) => ({ header: { title }, track, menu: { leftSideBarActive }, bluetooth: { device } }));
+    const { header, track, menu, bluetooth } = useSelector((state: IRootState) => state);
 
     const location = useLocation();
-    const [icon, setIcon] = useState();
+    const [icon, setIcon] = useState<string | undefined>();
     const [headerTitle, setHeaderTitle] = useState("");
 
     useEffect(() => {
@@ -91,7 +95,7 @@ function HeaderComponent() {
         }
     }, [track.path])
 
-    function currentLocationSetup(pathname) {
+    function currentLocationSetup(pathname: string) {
         switch (pathname) {
             case "/bluetooth":
                 setHeaderTitle(header.title);
@@ -115,7 +119,7 @@ function HeaderComponent() {
                     setIcon(music);
                 } else {
                     setHeaderTitle("miMi Player");
-                    setIcon();
+                    setIcon(undefined);
                 }
         }
 

@@ -1,6 +1,21 @@
+import { PayloadAction } from '@reduxjs/toolkit';
 import { TRACK_SET_PAUSE, TRACK_SET_PLAY, TRACK_SET_PATH, TRACK_SET_NAME, TRACK_SET_TIME_POSITION_MS, TRACK_SET_TIME_DURATION_MS, TRACK_SET_TIME_POSITION, TRACK_SET_TIME_DURATION, TRACK_SET_VOLUME_MUTED, TRACK_SET_VOLUME } from "../actions/track"
 
-const initialState = {
+export interface ITrackState {
+    name: string,
+    path: string,
+    isPlay: boolean,
+    isPause: boolean,
+    position: string,
+    duration: string,
+    positionMs: number,
+    durationMs: number,
+    precent: number,
+    volume: number,
+    volumeMuted: boolean
+}
+
+const initialState: ITrackState = {
     name: "",
     path: "",
     isPlay: false,
@@ -14,7 +29,7 @@ const initialState = {
     volumeMuted: false,
 };
 
-export default function counter(state = initialState, action) {
+export default function trackReducer(state = initialState, action: PayloadAction<any>) {
     switch (action.type) {
         case TRACK_SET_PLAY:
         case TRACK_SET_PAUSE:

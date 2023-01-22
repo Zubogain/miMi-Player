@@ -1,10 +1,14 @@
+import { PayloadAction } from '@reduxjs/toolkit';
 import { HEADER_SET_TITLE } from "../actions/header"
 
-const initialState = {
+interface IHeaderState {
+    title: string
+}
+const initialState: IHeaderState = {
     title: "Select Device"
 };
 
-export default function counter(state = initialState, action) {
+export default function headerReducer(state = initialState, action: PayloadAction<any>) {
     switch (action.type) {
         case HEADER_SET_TITLE:
             return { ...state, title: action.payload };
