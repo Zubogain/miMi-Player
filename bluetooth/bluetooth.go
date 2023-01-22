@@ -2,7 +2,6 @@ package bluetooth
 
 import (
 	"context"
-	"fmt"
 	"sync"
 	"time"
 
@@ -92,34 +91,24 @@ func (BT *Bluetooth) ConnectToDevice(deviceId string) bool {
 
 	devicesLen := uint32(len(BT.devices))
 
-	fmt.Println("FRAP_0")
-
 	// empty list of devices
 	if devicesLen == 0 {
 		return false
 	}
-
-	fmt.Println("FRAP_1")
 
 	// if device.Id is empty, device not found
 	if device.Id == "" {
 		return false
 	}
 
-	fmt.Println("FRAP_2")
-
 	// the device is already connected
 	if BT.device.Id == device.Id {
 		return false
 	}
 
-	fmt.Println("FRAP_3")
-
 	wg.Add(1)
 	go BT.connectToDeviceAsync(device, &wg)
 	wg.Wait()
-
-	fmt.Println("FRAP_4")
 
 	return true
 }
