@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from "react-router-dom";
 import store from './store';
 import "./assets/css/styles.css";
+import "rc-slider/assets/index.css";
 import App from "./App";
 import init from "./wailsbridge";
 

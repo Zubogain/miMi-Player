@@ -14,6 +14,9 @@ import { asyncTrackSetVolume, asyncTrackToggle, asyncTrackVolumeMutedToggle } fr
 import { msToPrecent } from "../utils/utils";
 import { IRootState, AppDispatch } from "../store";
 
+// // // // // // // 
+import CustomPlayer from "./custom-player";
+
 const PlayerComponentSeeker = ({ trackPrecent, deviceIsConnected }: { trackPrecent: number, deviceIsConnected: boolean }) => {
     return (
         <div className={deviceIsConnected ? "controls__seek-container relative disabled" : "controls__seek-container relative"}>
@@ -131,6 +134,7 @@ const PlayerComponent = () => {
 
     return (
         <React.Fragment>
+            <CustomPlayer />
             <PlayerComponentSeeker
                 trackPrecent={trackPrecent}
                 deviceIsConnected={bluetooth.device.isConnected} />
