@@ -14,7 +14,7 @@
     !define INFO_PRODUCTNAME "miMi Player"
 !endif
 !ifndef INFO_PRODUCTVERSION
-    !define INFO_PRODUCTVERSION "1.0.0.0a"
+    !define INFO_PRODUCTVERSION "1.1.1.0a"
 !endif
 !ifndef INFO_COPYRIGHT
     !define INFO_COPYRIGHT "Copyright © Emil Sh."

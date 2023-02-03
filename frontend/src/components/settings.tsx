@@ -40,7 +40,7 @@ const SettingsComponent = () => {
                 </div>
                 <div className="settings__group">
                     <div className="settings__group-item">
-                        <h2 className="settings__version">Lite - v1.0.0a</h2>
+                        <h2 className="settings__version">Lite - v1.1.0a</h2>
                     </div>
                     <div className="settings__group-item">
                         <h2 className="settings__copyright">© Emil Shergali</h2>
