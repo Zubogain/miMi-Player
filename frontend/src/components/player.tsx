@@ -134,7 +134,7 @@ const PlayerComponent = () => {
 
     return (
         <React.Fragment>
-            <CustomPlayer />
+            {/* <CustomPlayer /> */}
             <PlayerComponentSeeker
                 trackPrecent={trackPrecent}
                 deviceIsConnected={bluetooth.device.isConnected} />
