@@ -5,19 +5,7 @@ import {
     BLUETOOTH_SET_DEVICE_LIST,
     BLUETOOTH_CLEAR_DEVICE_LIST
 } from "../actions/bluetooth"
-
-export interface IBluetoothDevice {
-    Id: string,
-    Name: string,
-    isConnected: boolean
-}
-
-export interface IBluetoothDeviceList extends Array<IBluetoothDevice> { }
-
-interface IBluetoothState {
-    device: IBluetoothDevice
-    deviceList: IBluetoothDeviceList
-}
+import { IBluetoothState } from "../interfaces/bluetooth";
 
 const initialState: IBluetoothState = {
     device: {

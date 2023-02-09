@@ -1,9 +1,7 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import { SET_LEFT_SIDE_BAR_ACTIVE } from "../actions/menu"
+import { IMenuState } from "../interfaces/menu";
 
-interface IMenuState {
-    leftSideBarActive: boolean
-}
 const initialState: IMenuState = {
     leftSideBarActive: false,
 };

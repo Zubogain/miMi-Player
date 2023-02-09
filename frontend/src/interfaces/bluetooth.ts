@@ -1,12 +1,12 @@
 export interface IBluetoothDevice {
-    id: string,
-    name: string,
+    Id: string,
+    Name: string,
     isConnected: boolean
 }
 
 export interface IBluetoothDeviceList extends Array<IBluetoothDevice> { }
 
-interface IBluetoothState {
+export interface IBluetoothState {
     device: IBluetoothDevice
     deviceList: IBluetoothDeviceList
 }

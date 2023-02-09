@@ -1,9 +1,7 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import { PRELOADER_SET_IS_ACTIVE } from "../actions/preloader"
+import { IPreloaderState } from "../interfaces/preloader";
 
-interface IPreloaderState {
-    isActive: boolean
-}
 const initialState: IPreloaderState = {
     isActive: false
 };

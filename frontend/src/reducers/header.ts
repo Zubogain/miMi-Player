@@ -1,9 +1,7 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import { HEADER_SET_TITLE } from "../actions/header"
+import { IHeaderState } from "../interfaces/header"
 
-interface IHeaderState {
-    title: string
-}
 const initialState: IHeaderState = {
     title: "Select Device"
 };
