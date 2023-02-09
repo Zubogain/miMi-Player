@@ -1,101 +1,101 @@
 .settings {
-    height: 100%;
+  height: 100%;
 
-    display: flex;
-    flex-direction: column;
-    /* margin: 10px 10px; */
-    overflow: hidden scroll;
+  display: flex;
+  flex-direction: column;
+  /* margin: 10px 10px; */
+  overflow: hidden scroll;
 
-    margin-top: 15px;
-    margin-bottom: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .settings__section {
-    margin-bottom: auto;
+  margin-bottom: auto;
 }
 
 .settings__section:not(:first-child) {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
 .settings__section-title {
-    font-size: 16px;
-    font-weight: normal;
+  font-size: 16px;
+  font-weight: normal;
 
-    margin: 0;
-    margin-bottom: 10px;
-    margin-left: 10px;
+  margin: 0;
+  margin-bottom: 10px;
+  margin-left: 10px;
 
-    text-align: left;
-    /* border-bottom: 2px solid #777797; */
+  text-align: left;
+  /* border-bottom: 2px solid #777797; */
 }
 
 .settings__item {
-    width: 100%;
+  width: 100%;
 
-    display: flex;
-    align-items: center;
-    text-align: left;
+  display: flex;
+  align-items: center;
+  text-align: left;
 
-    position: relative;
+  position: relative;
 
-    /* margin-bottom: 10px; */
+  /* margin-bottom: 10px; */
 }
 
 .settings__item:last-child {
-    /* margin-bottom: 0; */
+  /* margin-bottom: 0; */
 }
 
 .settings__group {
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
 }
 
 .settings__group-item {
-    flex: 1;
-    display: flex;
-    justify-content: center;
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
-.settings__group-item>* {
-    width: 100%;
+.settings__group-item > * {
+  width: 100%;
 }
 
-.settings__group-item>*:first-child {
-    margin-right: auto;
+.settings__group-item > *:first-child {
+  margin-right: auto;
 }
 
-.settings__group-item>*:last-child {
-    margin-left: auto;
+.settings__group-item > *:last-child {
+  margin-left: auto;
 }
 
 .settings__footer {
-    padding: 0px 15px;
+  padding: 0px 15px;
 }
 
 .settings__version {
-    padding: 0;
+  padding: 0;
 
-    font-size: 10px;
-    font-weight: normal;
+  font-size: 10px;
+  font-weight: normal;
 
-    text-align: left;
+  text-align: left;
 }
 
 .settings__code-name {
-    padding: 0;
+  padding: 0;
 
-    font-size: 10px;
-    font-weight: normal;
+  font-size: 10px;
+  font-weight: normal;
 
-    text-align: right;
+  text-align: right;
 }
 
 .settings__copyright {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 
-    font-size: 10px;
-    font-weight: normal;
+  font-size: 10px;
+  font-weight: normal;
 }

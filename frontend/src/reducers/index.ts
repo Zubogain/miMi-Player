@@ -1,14 +1,14 @@
 import { combineReducers } from 'redux'
-import header from './header'
-import menu from './menu'
-import track from './track'
-import preloader from "./preloader"
-import bluetooth from "./bluetooth"
+import header from '@Reducers/header'
+import menu from '@Reducers/menu'
+import track from '@Reducers/track'
+import preloader from '@Reducers/preloader'
+import bluetooth from '@Reducers/bluetooth'
 
 export default combineReducers({
-    header,
-    menu,
-    track,
-    preloader,
-    bluetooth
+  header,
+  menu,
+  track,
+  preloader,
+  bluetooth,
 })

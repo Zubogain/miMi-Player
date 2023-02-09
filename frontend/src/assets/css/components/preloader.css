@@ -1,54 +1,53 @@
 .preloader__container {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 
-    z-index: 10;
+  z-index: 10;
 
-    background-color: #41414d;
+  background-color: #41414d;
 }
 
 .preloader {
-    height: 50px;
+  height: 50px;
 
-    position: absolute;
-    left: 50%;
-    top: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
 
-    transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .preloader {
-    height: 50px;
+  height: 50px;
 
-    position: absolute;
-    left: 50%;
-    top: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
 
-    transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
-
-.preloader>img {
-    height: 100%;
+.preloader > img {
+  height: 100%;
 }
 
-.preloader>.rotate {
-    animation: rotation 1s infinite linear;
+.preloader > .rotate {
+  animation: rotation 1s infinite linear;
 }
 
 .rotate {
-    animation: rotation 10s infinite linear;
+  animation: rotation 10s infinite linear;
 }
 
 @keyframes rotation {
-    from {
-        transform: rotate(0deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
 
-    to {
-        transform: rotate(359deg);
-    }
+  to {
+    transform: rotate(359deg);
+  }
 }

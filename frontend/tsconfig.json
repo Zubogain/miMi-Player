@@ -1,28 +1,37 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
     "target": "ESNext",
+    "paths": {
+      "@/*": ["./*"],
+      "@Src/*": ["./src/*"],
+      "@Wails/*": ["./wailsjs/*"],
+      "@Assets/*": ["./src/assets/*"],
+      "@Components/*": ["./src/components/*"],
+      "@Containers/*": ["./src/containers/*"],
+      "@Actions/*": ["./src/actions/*"],
+      "@Reducers/*": ["./src/reducers/*"],
+      "@Utils/*": ["./src/utils/*"],
+      "@Interfaces/*": ["./src/interfaces/*"],
+      "@Types/*": ["./src/types/*"]
+    },
     "useDefineForClassFields": true,
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ESNext"
-    ],
-    "allowJs": false,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "allowJs": true,
     "skipLibCheck": true,
-    "esModuleInterop": false,
-    "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "incremental": true
   },
-  "include": [
-    "src"
-  ],
+  "include": ["src"],
+  "exclude": ["node_modules"],
   "references": [
     {
       "path": "./tsconfig.node.json"

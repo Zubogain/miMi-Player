@@ -1,16 +1,17 @@
-import React, { useState, useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom'
 
 const BackComponent = ({ to }: { to: string }) => {
-    const navigate = useNavigate();
+  const navigate = useNavigate()
 
-    const back = () => {
-        navigate(to);
-    }
+  const back = () => {
+    navigate(to)
+  }
 
-    return (
-        <button className="btn btn__normal" onClick={back}>Cancel</button>
-    )
+  return (
+    <button className="btn btn__normal" onClick={back}>
+      Cancel
+    </button>
+  )
 }
 
-export default BackComponent;
+export default BackComponent

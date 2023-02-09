@@ -1,34 +1,34 @@
 .bluetooth img {
-    height: 16px;
+  height: 16px;
 }
 
 .bluetooth {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .bt-devices-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
 
-    margin: 15px 0px;
+  margin: 15px 0px;
 }
 
 .bt-devices {
-    width: 100%;
+  width: 100%;
 
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    overflow-y: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
 }
 
 .bt-devices-item {
-    font-size: 14px;
+  font-size: 14px;
 }

@@ -1,3 +1,3 @@
 export interface IPreloaderState {
-    isActive: boolean
+  isActive: boolean
 }

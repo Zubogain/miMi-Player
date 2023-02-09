@@ -1,34 +1,35 @@
-import React, { useState, useEffect, useRef } from "react";
-import { useSelector } from "react-redux";
+import { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
 
-import logo from "../assets/images/universal-logo.png";
-import { RootState, IRootState } from "../store";
+import logo from '@Assets/images/universal-logo.png'
+import { RootState, IRootState } from '@Src/store'
 
-const PRELOADER_CONTAINER_CLASS_NAME = "preloader__container draggable d-none";
-const PRELOADER_CONTAINER_ACTIVE_CLASS_NAME = "preloader__container draggable";
-
-
-
+const PRELOADER_CONTAINER_CLASS_NAME = 'preloader__container draggable d-none'
+const PRELOADER_CONTAINER_ACTIVE_CLASS_NAME = 'preloader__container draggable'
 
 const PreloaderComponent = () => {
-    const { preloader } = useSelector((state: IRootState) => ({ preloader: state.preloader }));
-    const [preloaderClassName, setPreloaderClassName] = useState(PRELOADER_CONTAINER_CLASS_NAME);
+  const { preloader } = useSelector((state: IRootState) => ({
+    preloader: state.preloader,
+  }))
+  const [preloaderClassName, setPreloaderClassName] = useState(
+    PRELOADER_CONTAINER_CLASS_NAME,
+  )
 
-    useEffect(() => {
-        if (preloader.isActive) {
-            setPreloaderClassName(PRELOADER_CONTAINER_ACTIVE_CLASS_NAME);
-        } else {
-            setPreloaderClassName(PRELOADER_CONTAINER_CLASS_NAME);
-        }
-    }, [preloader.isActive]);
+  useEffect(() => {
+    if (preloader.isActive) {
+      setPreloaderClassName(PRELOADER_CONTAINER_ACTIVE_CLASS_NAME)
+    } else {
+      setPreloaderClassName(PRELOADER_CONTAINER_CLASS_NAME)
+    }
+  }, [preloader.isActive])
 
-    return (
-        <div className={preloaderClassName}>
-            <div className="preloader">
-                <img className="rotate" src={logo} />
-            </div>
-        </div>
-    );
+  return (
+    <div className={preloaderClassName}>
+      <div className="preloader">
+        <img className="rotate" src={logo} />
+      </div>
+    </div>
+  )
 }
 
-export default PreloaderComponent;
+export default PreloaderComponent

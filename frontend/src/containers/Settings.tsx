@@ -1,20 +1,19 @@
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect } from 'react'
 
-import { WindowSetSize } from "../../wailsjs/runtime/runtime";
+import { WindowSetSize } from '@Wails/runtime/runtime'
 
-import SettingsComponent from "../components/settings";
+import SettingsComponent from '@Components/settings'
 
 const SettingsContainer = () => {
-    useEffect(() => {
-        WindowSetSize(480, 260);
-    }, []);
+  useEffect(() => {
+    WindowSetSize(480, 260)
+  }, [])
 
-    return (
-        <React.Fragment>
-            <SettingsComponent />
-        </React.Fragment>
-    );
+  return (
+    <>
+      <SettingsComponent />
+    </>
+  )
 }
 
-export default SettingsContainer;
+export default SettingsContainer

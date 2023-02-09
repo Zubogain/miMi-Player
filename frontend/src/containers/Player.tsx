@@ -1,18 +1,18 @@
-import React, { useEffect } from "react";
-import { WindowSetSize } from "../../wailsjs/runtime/runtime";
+import React, { useEffect } from 'react'
+import { WindowSetSize } from '@Wails/runtime/runtime'
 
-import Player from "../components/player";
+import Player from '@Components/player'
 
 const BluetoothContainer = () => {
-    useEffect(() => {
-        WindowSetSize(480, 146);
-    }, []);
+  useEffect(() => {
+    WindowSetSize(480, 146)
+  }, [])
 
-    return (
-        <React.Fragment>
-            <Player />
-        </React.Fragment>
-    );
+  return (
+    <>
+      <Player />
+    </>
+  )
 }
 
-export default BluetoothContainer;
+export default BluetoothContainer

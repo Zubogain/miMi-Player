@@ -1,20 +1,18 @@
-import React from "react";
-import { createRoot } from "react-dom/client";
-import { Provider } from 'react-redux';
-import { BrowserRouter } from "react-router-dom";
-import store from './store';
-import "./assets/css/styles.css";
-import "rc-slider/assets/index.css";
-import App from "./App";
-import init from "./wailsbridge";
+import React from 'react'
+import { createRoot } from 'react-dom/client'
+import { Provider } from 'react-redux'
+import { BrowserRouter } from 'react-router-dom'
+import store from '@Src/store'
+import '@Assets/css/styles.css'
+import 'rc-slider/assets/index.css'
+import App from '@Src/App'
+import init from '@Src/wailsbridge'
 
-const container = document.getElementById("root") as HTMLElement;
+const container = document.getElementById('root') as HTMLElement
 
-const root = createRoot(container);
+const root = createRoot(container)
 
-// store.getState
-
-init(store);
+init(store)
 
 root.render(
   <React.StrictMode>
@@ -23,5 +21,5 @@ root.render(
         <App />
       </BrowserRouter>
     </Provider>
-  </React.StrictMode >
-);
+  </React.StrictMode>,
+)

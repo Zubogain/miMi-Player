@@ -11,9 +11,10 @@
   cursor: default !important;
 }
 
-.btn__container {}
+.btn__container {
+}
 
-.btn__container--horizontal>.btn:not(:last-child) {
+.btn__container--horizontal > .btn:not(:last-child) {
   margin-right: 15px;
 }
 

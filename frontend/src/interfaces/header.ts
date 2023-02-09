@@ -1,3 +1,3 @@
 export interface IHeaderState {
-    title: string
+  title: string
 }

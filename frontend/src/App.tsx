@@ -1,15 +1,14 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from 'react-router-dom'
 
-import HeaderComponent from "./components/header";
-import LeftSideBarComponent from "./components/left-side-bar";
+import HeaderComponent from '@Components/header'
+import LeftSideBarComponent from '@Components/left-side-bar'
 
-import PlayerContainer from "./containers/Player";
-import BluetoothContainer from "./containers/Bluetooth";
-import SettingsContainer from "./containers/Settings";
-import PreloaderComponent from "./components/preloader";
+import PlayerContainer from '@Containers/Player'
+import BluetoothContainer from '@Containers/Bluetooth'
+import SettingsContainer from '@Containers/Settings'
+import PreloaderComponent from '@Components/preloader'
 
 const App = () => {
-
   return (
     <div id="App">
       <PreloaderComponent />
@@ -21,7 +20,7 @@ const App = () => {
       </Routes>
       <LeftSideBarComponent />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

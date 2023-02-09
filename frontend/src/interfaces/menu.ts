@@ -1,3 +1,3 @@
 export interface IMenuState {
-    leftSideBarActive: boolean
+  leftSideBarActive: boolean
 }
